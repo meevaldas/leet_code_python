@@ -7,13 +7,22 @@ from typing import List
 
 class Solution:
     def count_k_difference(self, nums: List[int], k: int) -> int:
+        number_counter = {}
+        pair_counter = 0
 
-        li = 0
+        for num in nums:
+            diff_one = num + k
+            diff_two = num - k
 
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if abs(nums[i] - nums[j]) == k:
-                    li += 1
+            if number_counter.get(diff_one):
+                pair_counter += number_counter[diff_one]
 
-        return li
+            if number_counter.get(diff_two):
+                pair_counter += number_counter[diff_two]
+
+            if number_counter.get(num) is None:
+                number_counter[num] = 0
+
+            number_counter[num] += 1
+        return pair_counter
 
