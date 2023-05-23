@@ -5,6 +5,7 @@ where i < j such that |nums[i] - nums[j]| == k.
 
 from typing import List
 
+
 class Solution:
     def count_k_difference(self, nums: List[int], k: int) -> int:
         number_counter = {}
