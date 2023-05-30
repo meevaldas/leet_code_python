@@ -12,8 +12,8 @@ class Solution:
 
         for n in nums:
             if (n - 1) not in num_set:
-                length = 0
-                while (n + length) in num_set:
-                    length += 1
-                longest = max(length, longest)
+                index = 0
+                while (n + index) in num_set:
+                    index += 1
+                longest = max(index, longest)
         return longest
