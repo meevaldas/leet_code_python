@@ -22,12 +22,3 @@ class Solution:
                 dictionary[sorted_word] += [word]
         return [dictionary[i] for i in dictionary]
 
-        # words_list = {}
-        #
-        # for word in strs:
-        #     sorted_word = ''.join(sorted(word))
-        #     if sorted_word not in words_list:
-        #         words_list[sorted_word] = [word]
-        #     else:
-        #         words_list[sorted_word] += ([word])
-        # return [words_list[i] for i in words_list]

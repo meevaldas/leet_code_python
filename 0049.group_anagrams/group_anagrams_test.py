@@ -12,12 +12,10 @@ class TestGroupAnagrams(unittest.TestCase):
         list_of_list.sort(key=itemgetter(0))
         return list_of_list
 
-
     def test_one(self):
-        self.assertListEqual(self.sort_list_of_list(Solution().group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"])),
-                             self.sort_list_of_list([["bat"], ["nat", "tan"], ["eat", "tea", "ate"]]))
-    # def test_group_anagrams_example_one(self):
-    #     self.assertAlmostEqual(sorted(Solution().group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"])), sorted([["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]))
+        self.assertListEqual(
+            self.sort_list_of_list(Solution().group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"])),
+            self.sort_list_of_list([["bat"], ["nat", "tan"], ["eat", "tea", "ate"]]))
 
     def test_group_anagrams_example_two(self):
         self.assertListEqual(self.sort_list_of_list(Solution().group_anagrams([""])), self.sort_list_of_list([[""]]))
