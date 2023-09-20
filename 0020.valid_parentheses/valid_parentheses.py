@@ -12,11 +12,11 @@ class Solution:
     def is_valid(self, s: str) -> bool:
         stack = []
         # hashmap
-        close_paratheses = {")": "(", "]": "[", "}": "{"}
+        close_parentheses = {")": "(", "]": "[", "}": "{"}
 
         for c in s:
-            if c in close_paratheses: # it will be a closing one
-                if stack and stack[-1] == close_paratheses[c]:
+            if c in close_parentheses: # it will be a closing one
+                if stack and stack[-1] == close_parentheses[c]:
                     return True
                 else:
                     return False
