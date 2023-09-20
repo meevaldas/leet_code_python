@@ -11,22 +11,25 @@ from typing import List
 
 
 class Solution:
+
     def product_except_self(self, nums: List[int]) -> List[int]:
-        # prod_list = []
+        # left = list(itertools.accumulate(nums, operator.mul))
+        # left.insert(0, 1)
         #
-        # for i in range(len(nums)):
-        #     left_prod = math.prod(nums[0:i])
-        #     right_prod = math.prod(nums[i+1:])
-        #     total = left_prod * right_prod
-        #     prod_list.append(total)
-        # return prod_list
+        # right = list(itertools.accumulate(reversed(nums), operator.mul))
+        # right.insert(0, 1)
+        #
+        # return [left[index] * right[-index - 2] for index in range(len(nums))]
 
-        left = list(itertools.accumulate(nums, operator.mul))
-        left.insert(0, 1)
+        n = len(nums)
+        res = [1] * n
 
-        right = list(itertools.accumulate(reversed(nums), operator.mul))
-        right.insert(0, 1)
+        for i in range(1, n):
+            res[i] = res[i - 1] * nums[i - 1]
 
-        return [left[index] * right[-index - 2] for index in range(len(nums))]
+        right_product = 1
 
-
+        for i in range(n - 1, -1, -1):
+            res[i] *= right_product
+            right_product *= nums[i]
+        return res
