@@ -11,9 +11,10 @@ class Solution:
         longest = 0
 
         for n in nums:
+            # check if it is the start of a  sequence
             if (n - 1) not in num_set:
-                index = 0
-                while (n + index) in num_set:
-                    index += 1
-                longest = max(index, longest)
+                length = 0
+                while (n + length) in num_set:
+                    length += 1
+                longest = max(length, longest)
         return longest
