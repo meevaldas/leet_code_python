@@ -17,7 +17,7 @@ class Solution:
         for c in s:
             if c in close_parentheses: # it will be a closing one
                 if stack and stack[-1] == close_parentheses[c]:
-                    return True
+                    stack.pop()
                 else:
                     return False
             else:
