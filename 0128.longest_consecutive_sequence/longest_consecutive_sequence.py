@@ -13,7 +13,7 @@ class Solution:
         for n in nums:
             # check if it is the start of a  sequence
             if (n - 1) not in num_set:
-                length = 0
+                length = 1
                 while (n + length) in num_set:
                     length += 1
                 longest = max(length, longest)
