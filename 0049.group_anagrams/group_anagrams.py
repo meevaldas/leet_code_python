@@ -9,21 +9,6 @@ from typing import List
 
 class Solution:
     def group_anagrams(self, strs: List[str]) -> List[List[str]]:
-        # dictionary = {}
-        # for word in strs:
-        #     sorted_word = ''.join(sorted(word))
-        #     # If word is not in dictionary
-        #     if sorted_word not in dictionary:
-        #         dictionary[sorted_word] = [word]
-        #     # If previously it is present that means its anagram
-        #     # was previously present
-        #     else:
-        #         dictionary[sorted_word] += [word]
-        # return [dictionary[i] for i in dictionary]
-        # dic = collections.defaultdict(list)
-        # for word in strs:
-        #     dic[''.join(sorted(word))].append(word)
-        # return dic.values()
         ans = collections.defaultdict(list)
 
         for s in strs:
