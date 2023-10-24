@@ -8,22 +8,6 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
 from typing import List
 
 
-# class Solution:
-#     def max_profit(self, prices: List[int]) -> int:
-#         left = 0
-#         right = left + 1
-#         result = 0
-#
-#         while left < right:
-#             if prices[left] < prices[right]:
-#                 profit = prices[right] - prices[left]
-#                 result = max(result, profit)
-#             else:
-#                 left += 1
-#             right += 1
-#         return result
-
-
 class Solution:
     def max_profit(self, prices: List[int]) -> int:
         profit = 0
